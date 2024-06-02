@@ -1,0 +1,33 @@
+﻿<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="background-color:orange; width:100%; padding:30px">
+        Header Section
+    </div>
+
+    <div style="width:100%;" class="row">
+        @if (IsSectionDefined("sideBar"))
+        {
+            <div class="col-3 border border-end border-end-2">
+                @RenderSection("Sidebar", false)
+            </div>
+        }
+        else
+        {
+            <div class="col-3 border border-end border-end-2">
+                No Actions Available
+            </div>
+        }
+    </div>
+
+
+    <div style="width:100%; col-8">
+        <h1>  Main Content</h1>
+        @RenderBody()
+    </div>
+    <div style="background-color:darkorchid; width:100%; padding:30px; border-top:1px solid black">
+        Footer Section
+    </div>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+</body>

@@ -1,0 +1,35 @@
+﻿
+
+<h2>View All Category</h2>
+
+@{
+    int i = 10, j = 20;
+    int c = i + j;
+    <p>@i + @j = @c </p>
+}
+
+<hr />
+
+<table>
+    <tr>
+        <td>Html TextBox</td>
+        <td>
+            <input type="text" id="txtHtml" name="txtHtml" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.TextBox("txtMVC")
+        </td>
+        <td>
+            @Html.Password("txtPassword")
+        </td>
+        <td>
+            @Html.TextArea("txtAddress")
+        </td>
+        <td>
+            @Html.RadioButton("gender", "male")Male
+            @Html.RadioButton("gender", "Female")Female
+        </td>
+    </tr>
+</table>

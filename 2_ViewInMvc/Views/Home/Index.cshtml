@@ -1,0 +1,54 @@
+﻿@*@using _2_ViewInMvc.Common
+*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Index View Content</h2>
+        <h3>Html tag</h3>
+        <input type="text" /> <input type="button" value="Submit" />
+        <hr />
+
+        @*<h3>HTML Helper Class</h3>
+            @Html.TextBox("txtName")
+            <br />
+            @Html.Password("txtPassword")
+            <br />
+            @Html.TextArea("txtAddress")
+            <br />
+            @Html.ActionLink("open Index2", "Index2")
+            <br />
+            @Html.Button("button","click me") |
+            @Html.Button("button","Log In")*@
+
+
+        <p>Data from ViewData : @ViewData["name"]</p>
+        <p>ViewData Upper case me : @ViewData["Name"].ToString().ToUpper()</p> @*object type me aata hai data convert karke use karenge*@
+
+        <p>Data from ViewBag : @ViewBag.Email</p>
+        <p>Data from ViewBag UpperCase : @ViewBag.Email.ToUpper()</p>
+
+        <p>ViewBag data from ViewData : @ViewData["Email"]</p>
+        <p>ViewData data from ViewBag : @ViewBag.name</p>
+
+
+     @*   @{
+            TempData.Keep("Address");
+        }*@
+
+        <p>Data From TempData : @TempData.Peek("Address")</p> @*shortkut way peek()*@
+        <p>Data From TempData Uppercase : @TempData.Peek("Address").ToString().ToUpper()</p>
+
+
+        <hr />
+        @Html.ActionLink("open Index2", "Index2")
+
+    </div>
+</body>
+</html>

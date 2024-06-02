@@ -1,0 +1,34 @@
+﻿@using _2_ViewInMvc.Models
+@model _2_ViewInMvc.Models.Product
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.Id);
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, new { @class = "form-label" })
+                @Html.EditorFor(model => model.Price, new { @class = "form-control" })
+            </div>
+            <div>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+
+    @Html.ActionLink("Back To List", "Index")
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model _2_ViewInMvc.Models.Category
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+
+        @*<h1>Passing Data From View to Controller</h1>
+              @using (Html.BeginForm("GetValue", "Category", FormMethod.Get))
+              {                                                             /* using form tag*/
+
+                  @Html.Hidden("Catename", "Home Application")  /*using hidden feild*/
+            <br />
+              <input type="submit" value="Create" />
+              <br />
+              @Html.ActionLink("Pass Data", "GetValue", new { Catename = "Electronics Devices" })
+              }*@
+        @*using Query string*@
+
+
+
+        @*<h1>Simple type Parameter</h1>*@
+        @*@using (Html.BeginForm())
+            {
+                <label>Name</label><input type="text" name="Name"/>
+                <label>Rating</label><input type="text" name="Rating"/>
+                <br />
+                <input type="submit" value="Create"/>
+            }*@
+
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.DisplayNameFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.Rating)
+                @Html.TextBoxFor(model => model.Rating)
+            </div>
+            <input type="submit" value="Create"/>
+        }
+
+    </div>
+    @Html.Action("GetPartial")
+
+    @{
+        Html.RenderAction("GetPartial");
+     }
+</body>
+</html>
